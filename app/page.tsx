@@ -22,7 +22,7 @@ export default function Home() {
           priority
         />
         <p className="my-6 text-sm md:mb-6 md:-mt-6">
-          beautiful flowers <br /> delivered digitally
+          Beautiful Flowers For my Baby 🌼 <br /> (Now saved digitally)
         </p>
         <div className="flex flex-col justify-center items-center">
           <Link
@@ -47,12 +47,12 @@ export default function Home() {
         </div>
 
         <p className="mt-10 text-sm text-gray-500">
-          made by{" "}
+          Coder of This Shop:{" "}
           <Link
-            href="https://x.com/pau_wee_"
+            href="https://www.instagram.com/themariomynkey/"
             className="mt-2 text-sm text-gray-500 underline"
           >
-            @pau_wee_
+            Manku
           </Link>
         </p>
       </div>

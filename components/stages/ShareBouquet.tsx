@@ -26,7 +26,7 @@ export default function ShareBouquet() {
   const handleCreateBouquet = async (bouquet: BouquetType) => {
     const short_id = nanoid(8);
 
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("bouquets")
       .insert([
         {
@@ -38,21 +38,21 @@ export default function ShareBouquet() {
           greenery: bouquet.greenery,
           flowerOrder: bouquet.flowerOrder,
         },
-      ])
-      .select(); // returns inserted row(s)
+      ]); // returns inserted row(s)
 
-    if (error || !data || data.length === 0) {
+    if (error) {
       console.error("Error creating bouquet:", error);
       return;
     }
 
-    const bouquetId = data[0].id;
-    router.push(`/bouquet/${bouquetId}`);
+    // const bouquetId = data[0].id;
+    // router.push(`/bouquet/${bouquetId}`);
+    router.push("/garden");
   };
 
   return (
     <div className="text-center">
-      <h2 className="text-md uppercase text-center mb-10">SEND THE BOUQUET</h2>
+      <h2 className="text-md uppercase text-center mb-10">ADD THIS MEMORY TO OUR GARDEN</h2>
 
       <Bouquet bouquet={bouquet} />
       <button
@@ -62,7 +62,7 @@ export default function ShareBouquet() {
         }}
         className="uppercase text-white bg-black px-5 py-3"
       >
-        CREATE SHAREABLE LINK
+        SAVE TO OUR GARDEN
       </button>
     </div>
   );

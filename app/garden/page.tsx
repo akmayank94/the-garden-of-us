@@ -29,12 +29,11 @@ export default async function AllBouquetsPage() {
 
       {/* Page title */}
       <h2 className="text-md uppercase mb-4 ">OUR GARDEN</h2>
-      <p className="text-sm opacity-50 mb-10">Thanks for stopping by!</p>
+      <p className="text-sm opacity-50 mb-10">I LOVE YOU MY BABY 🫀</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
         {data.map((bouquet) => (
-          //   <Link href={`/bouquet/${bouquet.id}`} key={bouquet.id}>
-          <div>
+          <div key={bouquet.id}>
             <div>
               <BouquetOnly bouquet={bouquet} />
             </div>
@@ -42,8 +41,6 @@ export default async function AllBouquetsPage() {
               {new Date(bouquet.created_at).toLocaleDateString()}
             </p>
           </div>
-
-          //   </Link>
         ))}
       </div>
     </div>
